@@ -1,0 +1,141 @@
+/* ============================================================
+   PORTFOLIO JS – Pablo Nazareno Coronati
+   Scroll reveal, navbar, timeline, smooth scroll
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---------- Navbar scroll effect ---------- */
+  const topbar = document.querySelector('.topbar');
+  const onScroll = () => {
+    topbar.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- Active nav link on scroll ---------- */
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  const activateNav = () => {
+    const scrollY = window.scrollY + 120;
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const h = sec.offsetHeight;
+      if (scrollY >= top && scrollY < top + h) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${sec.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  };
+  window.addEventListener('scroll', activateNav, { passive: true });
+
+  /* ---------- Smooth scroll for nav links ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Close mobile menu
+        document.querySelector('.nav-links')?.classList.remove('open');
+      }
+    });
+  });
+
+  /* ---------- Hamburger toggle ---------- */
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.querySelector('.nav-links');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      const isOpen = navMenu.classList.contains('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      hamburger.innerHTML = isOpen ? '&#x2715;' : '&#9776;';
+    });
+  }
+
+  /* ---------- Intersection Observer – reveal on scroll ---------- */
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+    reveals.forEach(el => observer.observe(el));
+  } else {
+    // Fallback: show all
+    reveals.forEach(el => el.classList.add('visible'));
+  }
+
+  /* ---------- Timeline accordion ---------- */
+  document.querySelectorAll('.timeline-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.timeline-card');
+      const wasOpen = card.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.timeline-card.open').forEach(c => c.classList.remove('open'));
+      // Toggle current
+      if (!wasOpen) card.classList.add('open');
+    });
+  });
+
+  /* ---------- Counter animation for stats ---------- */
+  const counters = document.querySelectorAll('[data-count]');
+  const animateCounter = (el) => {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    const duration = 1200;
+    const start = performance.now();
+
+    const update = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // easeOutExpo
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = Math.round(ease * target);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => counterObs.observe(el));
+  }
+
+  /* ---------- Contact form (visual only) ---------- */
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = '✓ Mensaje enviado';
+      btn.style.background = 'linear-gradient(135deg, #34d399, #7cf6d3)';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        form.reset();
+      }, 2500);
+    });
+  }
+
+});
