@@ -1,9 +1,11 @@
 /* ============================================================
    PORTFOLIO JS – Pablo Nazareno Coronati
-   Scroll reveal, navbar, timeline, smooth scroll
+   Scroll reveal, navbar, timeline, smooth scroll, and translation
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  let translations = null;
 
   /* ---------- Navbar scroll effect ---------- */
   const topbar = document.querySelector('.topbar');
@@ -121,20 +123,126 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(el => counterObs.observe(el));
   }
 
-  /* ---------- Contact form (visual only) ---------- */
+  /* ---------- Translation & Multi-language Support ---------- */
+  const getTranslationValue = (obj, keyPath) => {
+    return keyPath.split('.').reduce((acc, part) => acc && acc[part], obj);
+  };
+
+  const applyTranslations = (lang) => {
+    if (!translations) return;
+
+    document.documentElement.lang = lang;
+
+    // Translate standard elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const translation = getTranslationValue(translations[lang], key);
+      if (translation !== undefined) {
+        el.innerHTML = translation;
+      }
+    });
+
+    // Translate placeholder attributes
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      const translation = getTranslationValue(translations[lang], key);
+      if (translation !== undefined) {
+        el.setAttribute('placeholder', translation);
+      }
+    });
+
+    // Translate list items (arrays)
+    document.querySelectorAll('[data-i18n-list]').forEach(el => {
+      const key = el.getAttribute('data-i18n-list');
+      const list = getTranslationValue(translations[lang], key);
+      if (list && Array.isArray(list)) {
+        const children = el.children;
+        for (let i = 0; i < children.length && i < list.length; i++) {
+          children[i].innerHTML = list[i];
+        }
+      }
+    });
+
+    // Update lang toggle display
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+      const langTextSpan = langToggle.querySelector('span');
+      if (langTextSpan) {
+        langTextSpan.textContent = lang.toUpperCase();
+      }
+    }
+  };
+
+  const loadTranslations = () => {
+    translations = window.portfolioTranslations;
+    if (translations) {
+      applyTranslations('en');
+    } else {
+      console.error('Translations object not found on window.');
+    }
+  };
+
+  // Lang Toggle Button Event Listener
+  const langToggle = document.getElementById('lang-toggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', () => {
+      const currentLang = document.documentElement.lang || 'en';
+      const newLang = currentLang === 'en' ? 'es' : 'en';
+      localStorage.setItem('selectedLang', newLang);
+      applyTranslations(newLang);
+    });
+  }
+
+  // Load translations on startup
+  loadTranslations();
+
+  /* ---------- Contact form Submission ---------- */
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = '✓ Mensaje enviado';
-      btn.style.background = 'linear-gradient(135deg, #34d399, #7cf6d3)';
+      const btnTextSpan = btn.querySelector('span') || btn;
+      const originalText = btnTextSpan.textContent;
+
+      const name = document.getElementById('form-name').value;
+      const email = document.getElementById('form-email').value;
+      const message = document.getElementById('form-message').value;
+
+      const currentLang = document.documentElement.lang || 'en';
+      const sendingText = currentLang === 'es' ? 'Enviando...' : 'Sending...';
+      const successText = currentLang === 'es' ? '✓ Mensaje enviado' : '✓ Message sent';
+      const errorText = currentLang === 'es' ? '✗ Error al enviar' : '✗ Sending failed';
+
+      btnTextSpan.textContent = sendingText;
+      const originalBg = btn.style.background;
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/pablocoronati@hotmail.com", {
+          method: "POST",
+          headers: { 
+            'Accept': 'application/json'
+          },
+          body: new FormData(form)
+        });
+
+        if (response.ok) {
+          btnTextSpan.textContent = successText;
+          btn.style.background = 'linear-gradient(135deg, #34d399, #7cf6d3)';
+          form.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        console.error('Error submitting form:', err);
+        btnTextSpan.textContent = errorText;
+        btn.style.background = 'linear-gradient(135deg, #ef4444, #f87171)';
+      }
+
       setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        form.reset();
-      }, 2500);
+        btnTextSpan.textContent = originalText;
+        btn.style.background = originalBg;
+      }, 3500);
     });
   }
 

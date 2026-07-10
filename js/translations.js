@@ -1,0 +1,320 @@
+window.portfolioTranslations = {
+  "en": {
+    "nav": {
+      "about": "About",
+      "experience": "Experience",
+      "education": "Education",
+      "certifications": "Certifications",
+      "skills": "Stack",
+      "contact": "Contact"
+    },
+    "hero": {
+      "eyebrow": "Systems Administrator | IT Support",
+      "lead": "Systems Administrator with experience in local infrastructure, Linux, networking, and virtualization.",
+      "cta_contact": "Contact",
+      "cta_exp": "Experience",
+      "stat_exp_lbl": "Years of experience",
+      "stat_users_lbl": "Users supported",
+      "stat_vms_lbl": "VMs & Containers",
+      "stat_languages_lbl": "Languages",
+      "availability_status": "Available for remote work",
+      "availability_title": "SysAdmin · IT Support",
+      "focus_label": "Current Focus",
+      "focus_linux": "Linux Admin",
+      "focus_networks": "Networking",
+      "focus_virtualization": "Virtualization",
+      "focus_stm32": "STM32"
+    },
+    "about": {
+      "kicker": "About me",
+      "title": "Professional Profile",
+      "lead": "Systems Administrator with 4+ years of IT Support experience in local production environments.",
+      "subcopy": "Specialized in Linux and Windows systems administration, network troubleshooting, and local infrastructure maintenance. Experienced in deploying hardware, provisioning workstations, implementing backup procedures, and writing standard operating procedures (SOPs). Strong background in troubleshooting and incident resolution for critical business systems. Focused on reliability and continuous improvement.",
+      "growth_note": "Currently preparing to specialize in Artificial Intelligence to complement my infrastructure and systems administration background.",
+      "research_title": "Research & Languages",
+      "research_subcopy": "Student researcher at Universidad Siglo 21 focusing on server architecture efficiency, ARM/x86 datacenter scalability, and systems scalability. Certified C2 English speaker and Japanese language enthusiast (JLPT N4).",
+      "chip_english": "English C2",
+      "chip_japanese": "JLPT N4",
+      "chip_research": "ARM/x86 Research"
+    },
+    "experience": {
+      "kicker": "Trajectory",
+      "title": "Experience",
+      "job1": {
+        "title": "IT Support / Systems Administration",
+        "company": "Zhen Club de Playa – Costa del Este, Buenos Aires · Dec 2020 – Mar 2025",
+        "points": [
+          "Administration and maintenance of local IT infrastructure (workstations, routers, switches) in a production environment.",
+          "Linux and Windows systems administration, workstation provisioning, software deployment, and patch management.",
+          "Network troubleshooting, routing, switching, and local connectivity resolution in high-traffic scenarios.",
+          "Deploying hardware components, peripheral configuration, and troubleshooting.",
+          "Implementing backup and recovery procedures to ensure data integrity and business continuity.",
+          "Providing L1/L2 technical support and user support for ~40 internal users and 20–150 daily external users, ensuring rapid incident resolution."
+        ]
+      },
+      "job2": {
+        "title": "Systems Analyst (Project-based)",
+        "company": "Underc0de Foundation – Mendoza, Argentina · Aug 2024 – Nov 2024",
+        "points": [
+          "Analysis of internal processes and identification of operational improvements.",
+          "Design of a full-stack solution for guest registration at events.",
+          "Creation of technical documentation: UML diagrams and process flows.",
+          "Collaboration with stakeholders to define requirements and propose data-driven solutions."
+        ]
+      },
+      "job3": {
+        "title": "Private Japanese Tutor",
+        "company": "Virtual classes via Discord – Individual and group sessions · 2025 – Present",
+        "points": [
+          "Basic/initial Japanese course (hiragana, katakana, basic kanji, elementary grammar).",
+          "Preparation for JLPT N5: 39-class program (~58.5 hours), progressive accumulative methodology, Minna no Nihongo bibliography.",
+          "Synchronous 90-minute classes, reinforcement material, continuous evaluation, and certificate of completion."
+        ]
+      }
+    },
+    "education": {
+      "kicker": "Formation",
+      "title": "Education",
+      "degree1": {
+        "title": "Bachelor's Degree in Computer Science",
+        "institution": "Siglo 21 University – Córdoba, Argentina",
+        "period": "Mar 2021 – Nov 2025",
+        "points": [
+          "Training in operating systems, networks, databases, and IT infrastructure.",
+          "Student researcher in PID Type 1 Project 'Intelligent Computational Ecosystems for Digital Transformation'.",
+          "Focus on ARM/x86 server architectures, data center efficiency, and computational scalability.",
+          "Training in Artificial Intelligence and Explainable AI (XAI)."
+        ],
+        "status": "Completed"
+      },
+      "degree2": {
+        "title": "Systems Analyst Degree",
+        "institution": "Siglo 21 University – Córdoba, Argentina",
+        "period": "Mar 2021 – Apr 2024",
+        "points": [
+          "Systems analysis and technical documentation.",
+          "Foundations of networks, operating systems, and databases.",
+          "UML modeling, process diagrams, and agile methodologies (SCRUM)."
+        ],
+        "status": "Completed"
+      },
+      "degree3": {
+        "title": "Postgraduate Specialization in Embedded Systems",
+        "institution": "FIUBA – School of Engineering, UBA – Buenos Aires",
+        "period": "Mar 2026 – Apr 2026",
+        "status_label": "Approved Courses",
+        "points": [
+          "Microcontroller Programming",
+          "Communication Protocols in Embedded Systems",
+          "Design for Manufacturability"
+        ]
+      }
+    },
+    "certifications": {
+      "kicker": "Credentials",
+      "title": "Certifications",
+      "cert1_title": "Academic Article Writing Workshop",
+      "cert1_period": "Apr – May 2025",
+      "cert2_title": "WICC 2026 – Thesis Work",
+      "cert2_desc": "Computer Science Researchers Workshop.",
+      "cert2_link": "View poster",
+      "cert3_title": "JLPT N5",
+      "cert3_desc": "Officially approved and certified.",
+      "cert4_title": "JLPT N4",
+      "cert4_desc": "Level completed."
+    },
+    "skills": {
+      "kicker": "Tools",
+      "title": "Technology Stack",
+      "group_os": "Operating Systems",
+      "group_networking": "Networking",
+      "group_sysadmin": "System Administration",
+      "group_virtualization": "Virtualization & Cloud",
+      "group_hardware": "Hardware",
+      "group_databases": "Databases",
+      "group_languages": "Programming Languages",
+      "group_frameworks": "Frameworks & Development",
+      "group_git": "Version Control",
+      "group_documentation": "Documentation & Methodologies",
+      "group_ai": "AI & Automation",
+      "group_languages_title": "Languages",
+      "languages_list": [
+        "Spanish — Native",
+        "English — C2 (Full Professional Proficiency)",
+        "Japanese — JLPT N4"
+      ]
+    },
+    "contact": {
+      "title": "Let's talk?",
+      "subtitle": "I am available for remote SysAdmin and similar roles.",
+      "location": "Santa Teresita, Buenos Aires, Argentina",
+      "form_name": "Your name",
+      "form_email": "Your email",
+      "form_message": "Your message",
+      "form_submit": "Send message",
+      "form_success": "✓ Message sent"
+    },
+    "footer": {
+      "text": "&copy; 2026 Pablo Nazareno Coronati. Made with HTML, CSS, and JS."
+    }
+  },
+  "es": {
+    "nav": {
+      "about": "Sobre mí",
+      "experience": "Experiencia",
+      "education": "Educación",
+      "certifications": "Certificaciones",
+      "skills": "Stack",
+      "contact": "Contacto"
+    },
+    "hero": {
+      "eyebrow": "Administrador de Sistemas | Soporte TI",
+      "lead": "Administrador de Sistemas con experiencia en infraestructura local, Linux, redes y virtualización.",
+      "cta_contact": "Contacto",
+      "cta_exp": "Experiencia",
+      "stat_exp_lbl": "Años de experiencia",
+      "stat_users_lbl": "Usuarios soportados",
+      "stat_vms_lbl": "VMs y Contenedores",
+      "stat_languages_lbl": "Idiomas",
+      "availability_status": "Disponible para trabajo remoto",
+      "availability_title": "SysAdmin · Soporte Técnico",
+      "focus_label": "Foco actual",
+      "focus_linux": "Linux Admin",
+      "focus_networks": "Redes",
+      "focus_virtualization": "Virtualización",
+      "focus_stm32": "STM32"
+    },
+    "about": {
+      "kicker": "Sobre mí",
+      "title": "Perfil Profesional",
+      "lead": "Administrador de Sistemas con más de 4 años de experiencia en Soporte TI en entornos locales de producción.",
+      "subcopy": "Especializado en la administración de sistemas Linux y Windows, resolución de problemas de red y mantenimiento de infraestructura local. Experiencia en despliegue de hardware, aprovisionamiento de estaciones de trabajo, implementación de procedimientos de backup y redacción de documentación técnica y procedimientos operativos estándar (SOPs). Sólida trayectoria en resolución de incidentes en sistemas críticos. Orientado a la fiabilidad y mejora continua.",
+      "growth_note": "Actualmente preparándome para especializarme en Inteligencia Artificial para complementar mi sólida trayectoria en infraestructura y administración de sistemas.",
+      "research_title": "Investigación e Idiomas",
+      "research_subcopy": "Investigador estudiantil en la Universidad Siglo 21 enfocado en la eficiencia de arquitecturas de servidores, escalabilidad de data centers ARM/x86 y sistemas. Certificado C2 en inglés y entusiasta del idioma japonés (JLPT N4).",
+      "chip_english": "Inglés C2",
+      "chip_japanese": "JLPT N4",
+      "chip_research": "Investigación ARM/x86"
+    },
+    "experience": {
+      "kicker": "Trayectoria",
+      "title": "Experiencia",
+      "job1": {
+        "title": "Soporte TI / Administración de Sistemas",
+        "company": "Zhen Club de Playa – Costa del Este, Buenos Aires · Dic 2020 – Mar 2025",
+        "points": [
+          "Administración y mantenimiento de infraestructura TI local (workstations, routers, switches) en entorno de producción.",
+          "Administración de sistemas Linux y Windows, aprovisionamiento de estaciones de trabajo, despliegue de software y gestión de parches.",
+          "Resolución de problemas de red, enrutamiento, conmutación y conectividad local en escenarios de alto tráfico.",
+          "Despliegue de componentes de hardware, configuración de periféricos y diagnóstico de fallas.",
+          "Implementación de procedimientos de respaldo (backup) y recuperación para asegurar la integridad de los datos y continuidad del negocio.",
+          "Soporte técnico L1/L2 y atención a usuarios para ~40 usuarios internos y de 20 a 150 usuarios externos diarios, asegurando una rápida resolución de incidentes."
+        ]
+      },
+      "job2": {
+        "title": "Analista de Sistemas (Basado en Proyectos)",
+        "company": "Fundación Underc0de – Mendoza, Argentina · Ago 2024 – Nov 2024",
+        "points": [
+          "Análisis de procesos internos e identificación de mejoras operativas.",
+          "Diseño de solución full-stack para registro de invitados en eventos.",
+          "Creación de documentación técnica: diagramas UML y flujos de procesos.",
+          "Colaboración con stakeholders para definir requisitos y proponer soluciones basadas en datos."
+        ]
+      },
+      "job3": {
+        "title": "Docente Particular de Japonés",
+        "company": "Clases virtuales vía Discord – Modalidad individual y grupal · 2025 – Presente",
+        "points": [
+          "Curso básico/inicial de japonés (hiragana, katakana, kanji básicos, gramática elemental).",
+          "Preparación para JLPT N5: programa de 39 clases (~58.5 hs), metodología progresiva acumulativa, bibliografía Minna no Nihongo.",
+          "Clases sincrónicas de 90 minutos, material de refuerzo, evaluación continua y certificado de cursada."
+        ]
+      }
+    },
+    "education": {
+      "kicker": "Formación",
+      "title": "Educación",
+      "degree1": {
+        "title": "Licenciado en Informática",
+        "institution": "Universidad Siglo 21 – Córdoba, Argentina",
+        "period": "Mar 2021 – Nov 2025",
+        "points": [
+          "Formación en sistemas operativos, redes, bases de datos e infraestructura TI.",
+          "Investigador estudiantil en proyecto PID Tipo 1 'Ecosistemas Computacionales Inteligentes para la Transformación Digital'.",
+          "Enfoque en arquitecturas de servidores ARM/x86, eficiencia de data centers y escalabilidad computacional.",
+          "Formación en Inteligencia Artificial e IA Explicable (XAI)."
+        ],
+        "status": "Completado"
+      },
+      "degree2": {
+        "title": "Analista en Sistemas",
+        "institution": "Universidad Siglo 21 – Córdoba, Argentina",
+        "period": "Mar 2021 – Abr 2024",
+        "points": [
+          "Análisis de sistemas y documentación técnica.",
+          "Fundamentos de redes, sistemas operativos y bases de datos.",
+          "Modelado UML, diagramas de procesos y metodologías ágiles (SCRUM)."
+        ],
+        "status": "Completado"
+      },
+      "degree3": {
+        "title": "Especialización en Sistemas Embebidos",
+        "institution": "FIUBA – Facultad de Ingeniería, UBA – Buenos Aires",
+        "period": "Mar 2026 – Abr 2026",
+        "status_label": "Materias aprobadas",
+        "points": [
+          "Programación de Microcontroladores",
+          "Protocolos de Comunicación en Sistemas Embebidos",
+          "Diseño para Manufactura"
+        ]
+      }
+    },
+    "certifications": {
+      "kicker": "Credenciales",
+      "title": "Certificaciones",
+      "cert1_title": "Taller de Redacción de Artículos Académicos",
+      "cert1_period": "Abr – May 2025",
+      "cert2_title": "WICC 2026 – Trabajo de Tesis",
+      "cert2_desc": "Workshop de Investigadores en Ciencias de la Computación.",
+      "cert2_link": "Ver poster",
+      "cert3_title": "JLPT N5",
+      "cert3_desc": "Aprobado y certificado oficialmente.",
+      "cert4_title": "JLPT N4",
+      "cert4_desc": "Nivel completado."
+    },
+    "skills": {
+      "kicker": "Herramientas",
+      "title": "Stack Tecnológico",
+      "group_os": "Sistemas Operativos",
+      "group_networking": "Redes",
+      "group_sysadmin": "Administración de Sistemas",
+      "group_virtualization": "Virtualización & Cloud",
+      "group_hardware": "Hardware",
+      "group_databases": "Bases de Datos",
+      "group_languages": "Lenguajes de Programación",
+      "group_frameworks": "Frameworks & Desarrollo",
+      "group_git": "Control de Versiones",
+      "group_documentation": "Documentación & Metodologías",
+      "group_ai": "IA & Automatización",
+      "group_languages_title": "Idiomas",
+      "languages_list": [
+        "Español — Nativo",
+        "Inglés — C2 (Competencia Profesional Completa)",
+        "Japonés — JLPT N4"
+      ]
+    },
+    "contact": {
+      "title": "¿Hablamos?",
+      "subtitle": "Estoy disponible para roles remotos de SysAdmin y/o similares.",
+      "location": "Santa Teresita, Buenos Aires, Argentina",
+      "form_name": "Tu nombre",
+      "form_email": "Tu email",
+      "form_message": "Tu mensaje",
+      "form_submit": "Enviar mensaje",
+      "form_success": "✓ Mensaje enviado"
+    },
+    "footer": {
+      "text": "&copy; 2026 Pablo Nazareno Coronati. Hecho con HTML, CSS y JS."
+    }
+  }
+};
