@@ -408,6 +408,11 @@ main{width:min(calc(100% - 2rem),var(--max-w));margin:0 auto;padding:2rem 0 4rem
 }
 
 /* Language Toggle Button */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
 .lang-toggle-btn {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--line);
@@ -420,7 +425,6 @@ main{width:min(calc(100% - 2rem),var(--max-w));margin:0 auto;padding:2rem 0 4rem
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin-left: 0.5rem;
 }
 .lang-toggle-btn:hover {
   background: rgba(124, 246, 211, 0.12);
@@ -438,11 +442,6 @@ main{width:min(calc(100% - 2rem),var(--max-w));margin:0 auto;padding:2rem 0 4rem
 @media(max-width:900px){
   .topbar{border-radius:20px;padding:.8rem 1rem;flex-wrap:wrap}
   .nav-links{display:none;width:100%;flex-direction:column;gap:.6rem;padding-top:.8rem}
-  .lang-toggle-btn {
-    margin-left: 0;
-    margin-top: 0.4rem;
-    align-self: flex-start;
-  }
   .nav-links.open{display:flex}
   .hamburger{display:block}
   .hero{grid-template-columns:1fr;padding:2rem 0 1rem}
