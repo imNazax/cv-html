@@ -32,7 +32,7 @@ window.portfolioTranslations = {
       "subcopy": "Specialized in Linux and Windows systems administration, network troubleshooting, and local infrastructure maintenance. Experienced in deploying hardware, provisioning workstations, implementing backup procedures, and writing standard operating procedures (SOPs). Strong background in troubleshooting and incident resolution for critical business systems. Focused on reliability and continuous improvement.",
       "growth_note": "Currently preparing to specialize in Artificial Intelligence to complement my infrastructure and systems administration background.",
       "research_title": "Research & Languages",
-      "research_subcopy": "Student researcher at Universidad Siglo 21 focusing on server architecture efficiency, ARM/x86 datacenter scalability, and systems scalability. Certified C2 English speaker and Japanese language enthusiast (JLPT N4).",
+      "research_subcopy": "Student researcher at Universidad Siglo 21 focusing on server architecture efficiency, ARM/x86 datacenter scalability, and systems scalability. C2 English speaker and Japanese language enthusiast (JLPT N4).",
       "chip_english": "English C2",
       "chip_japanese": "JLPT N4",
       "chip_research": "ARM/x86 Research"
@@ -191,7 +191,7 @@ window.portfolioTranslations = {
       "subcopy": "Especializado en la administración de sistemas Linux y Windows, resolución de problemas de red y mantenimiento de infraestructura local. Experiencia en despliegue de hardware, aprovisionamiento de estaciones de trabajo, implementación de procedimientos de backup y redacción de documentación técnica y procedimientos operativos estándar (SOPs). Sólida trayectoria en resolución de incidentes en sistemas críticos. Orientado a la fiabilidad y mejora continua.",
       "growth_note": "Actualmente preparándome para especializarme en Inteligencia Artificial para complementar mi sólida trayectoria en infraestructura y administración de sistemas.",
       "research_title": "Investigación e Idiomas",
-      "research_subcopy": "Investigador estudiantil en la Universidad Siglo 21 enfocado en la eficiencia de arquitecturas de servidores, escalabilidad de data centers ARM/x86 y sistemas. Certificado C2 en inglés y entusiasta del idioma japonés (JLPT N4).",
+      "research_subcopy": "Investigador estudiantil en la Universidad Siglo 21 enfocado en la eficiencia de arquitecturas de servidores, escalabilidad de data centers ARM/x86 y sistemas. C2 en inglés y entusiasta del idioma japonés (JLPT N4).",
       "chip_english": "Inglés C2",
       "chip_japanese": "JLPT N4",
       "chip_research": "Investigación ARM/x86"
