@@ -157,8 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const list = getTranslationValue(translations[lang], key);
       if (list && Array.isArray(list)) {
         const children = el.children;
-        for (let i = 0; i < children.length && i < list.length; i++) {
-          children[i].innerHTML = list[i];
+        const tag = children.length > 0 ? children[0].tagName.toLowerCase() : 'li';
+        const className = children.length > 0 ? children[0].className : '';
+        if (children.length === list.length) {
+          for (let i = 0; i < list.length; i++) {
+            children[i].innerHTML = list[i];
+          }
+        } else {
+          el.innerHTML = list.map(item => `<${tag}${className ? ` class="${className}"` : ''}>${item}</${tag}>`).join('');
         }
       }
     });
@@ -176,7 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const loadTranslations = () => {
     translations = window.portfolioTranslations;
     if (translations) {
-      applyTranslations('en');
+      const savedLang = localStorage.getItem('selectedLang') || 'en';
+      applyTranslations(savedLang);
     } else {
       console.error('Translations object not found on window.');
     }
